@@ -1,19 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import NavBar from './components/estaticos/navbar/NavBar';
 import Footer from './components/estaticos/footer/Footer';
 import Home from './paginas/home/Home';
-import './App.css';
-
+import Login from './paginas/login/Login';
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import "./App.css";
 
 function App() {
- return (
-  <>
-  <NavBar/>
-  <Home/>
-  <Footer/>
- </>
- )
+    return (
+        <Router>
+            <NavBar/>
+            <div style={{ minHeight: '100vh' }}>
+                <Routes> // Antigo Switch
+                    <Route path="/" element={<Login />} />
+                    <Route path="/home" element={<Home />} />
+                </Routes>
+            </div>
+            <Footer />
+        </Router>
+    );
 }
-
 export default App;

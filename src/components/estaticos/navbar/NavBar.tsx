@@ -34,8 +34,8 @@ export default function ButtonAppBar() {
                         </Typography>
                     </Box>
 
-                    <Box>
-                        <Link to='/home' className='text-decorator.none'>
+                    <Box >
+                        <Link to='/home' className='text-decorator-none'>
                             <Box mx={1} className='cursor'>
                                 <Typography color='inherit'>
                                     home
@@ -62,8 +62,8 @@ export default function ButtonAppBar() {
                         </Typography>
                     </Box>
 
-                    <Box>
-                        <Link to='/' className='text-decorator.none'>
+                    <Box >
+                        <Link to='/' className='text-decorator-none'>
                             <Box mx={1} className='cursor'>
                                 <Typography color='inherit'>
                                     logout

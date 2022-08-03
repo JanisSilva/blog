@@ -28,7 +28,7 @@ function CadastroUsuario() {
 
     useEffect(() => {
         if (userResult.id != 0) {
-            history('/login')
+            history('/')
         }
     }, [userResult])
 
@@ -67,11 +67,11 @@ function CadastroUsuario() {
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='Confirmarsenha' label='Confirmar senha' variant='outlined' name='Confirmarsenha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center'>
-                            <Link to='/login' className='text-decorator-none2'>
+                           
                                 <Button type='submit' variant='contained' color='primary'>
                                     Cadastrar
                                 </Button>
-                            </Link>
+                            
                             <Link to='/login' className='text-decorator-none2'>
                                 <Button variant='contained' color='secondary' className='btnCancelar'>
                                     Cancelar

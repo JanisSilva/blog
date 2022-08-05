@@ -1,14 +1,9 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import { Typography, Button, Toolbar, AppBar, makeStyles } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import { Box } from '@mui/material';
 import { Link } from 'react-router-dom';
-import './NavBar.css'
+import './NavBar2.css'
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -26,48 +21,75 @@ export default function ButtonAppBar() {
 
     return (
         <div>
-            <AppBar position="static">
+            <AppBar position="static" className='barras'>
                 <Toolbar variant='dense'>
-                    <Box style={{ cursor: 'pointer' }}>
-                        <Typography variant="h5" color='inherit' >
-                            Blog pessoal
+                    <Box>
+                        <Typography className='cursor' variant="h5" color='inherit' >
+                            MYBLOG
+                        </Typography>
+                    </Box>
+
+                    <Box>
+                        <Typography className='cursor espaco'>
+                        |
                         </Typography>
                     </Box>
 
                     <Box >
                         <Link to='/home' className='text-decorator-none'>
-                            <Box mx={1} className='cursor'>
-                                <Typography color='inherit'>
-                                    home
+                            <Box mx={1} >
+                                <Typography className='cursor espaco' color='inherit'>
+                                Home
                                 </Typography>
                             </Box>
                         </Link>
                     </Box>
 
-                    <Box mx={1} className='cursor'>
-                        <Typography color='inherit'>
-                            postagem
+                    <Box>
+                        <Typography className='cursor'>
+                        |
                         </Typography>
                     </Box>
 
-                    <Box mx={1} className='cursor'>
-                        <Typography color='inherit'>
-                            temas
+                    <Box mx={1} >
+                        <Typography className='cursor espaco' color='inherit'>
+                        Postagem
                         </Typography>
                     </Box>
 
-                    <Box mx={1} className='cursor'>
-                        <Typography color='inherit'>
-                            cadastrar tema
+                    <Box>
+                        <Typography className='cursor'>
+                        |
+                        </Typography>
+                    </Box>
+
+                    <Box mx={1} >
+                        <Typography className='cursor espaco' color='inherit'>
+                        Temas
+                        </Typography>
+                    </Box>
+
+                    <Box>
+                        <Typography className='cursor'>
+                        |
+                        </Typography>
+                    </Box>
+
+                    <Box mx={1} >
+                        <Typography className='cursor espaco' color='inherit'>
+                        Sobre nós
                         </Typography>
                     </Box>
 
                     <Box >
                         <Link to='/' className='text-decorator-none'>
-                            <Box mx={1} className='cursor'>
-                                <Typography color='inherit'>
-                                    logout
-                                </Typography>
+                            <Box mx={1} >
+                                <Button  className="botaoLog" href="/">
+                                    <Typography className='cursor'>
+                                        | Logout
+                                    </Typography>
+                                </Button>
+
                             </Box>
                         </Link>
                     </Box>

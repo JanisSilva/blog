@@ -1,0 +1,27 @@
+.box1{
+    background-color: #F2E3DA !important;; 
+    height: 80px;
+}
+
+.box2{
+    background-color:#F2E3DA !important;; 
+    height: 30px;
+}
+.redes{
+    font-size: 30px !important; 
+    color:#3CA6A6;
+}
+.textos{
+    color: #11503F;
+}
+
+.textomin{
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin-left: 1120px !important;
+    margin-top: 15px !important;
+    color: #11503F;
+}
+.redesbox{
+    margin-left: 1120px !important;
+}

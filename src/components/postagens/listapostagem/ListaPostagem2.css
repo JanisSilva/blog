@@ -1,0 +1,22 @@
+.boxSuperior{
+    background-color: #B9BF8E;
+    border-radius: 20px 20px 0px 0px;
+    font-style: color #11503F;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center;
+    
+}
+
+.botaoAtualizar{
+    border-radius: 0px 0px 0px 20px !important;
+    color: #F2EEE3!important;
+    background-color:#3CA6A6!important;
+}
+
+
+.botaoDelete{
+    border-radius: 0px 0px 20px 0px !important;
+    color: #F2EEE3!important;
+    background-color: #FF8177 !important;
+}

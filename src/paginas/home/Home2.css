@@ -1,0 +1,17 @@
+
+.postagensFundo{
+    background-color: #F2EEE3 !important ;
+    background: radial-gradient(#3B9ABF 1px, transparent 1px);
+    background-size: 25px 25px;
+
+}
+
+.cropped {
+    width: 1540px; /* width of container */
+    height: auto; /* height of container */
+    overflow: hidden;
+}
+
+.cropped img {
+    margin: -190px 0px 0px -10px;
+}

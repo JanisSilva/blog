@@ -2,7 +2,8 @@ import React from 'react';
 import { Typography, Button, Toolbar, AppBar, makeStyles } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import { Box } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
 import './NavBar2.css'
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,19 +20,35 @@ const useStyles = makeStyles((theme) => ({
 export default function ButtonAppBar() {
     const classes = useStyles();
 
+    function NavBar() {
+        const [token, setToken] = useLocalStorage('token');
+        let history = useNavigate();
+
+
+        function goLogout() {
+            setToken('')
+            alert("Usuário deslogado")
+            history('/login')
+        }
+    }
+
     return (
         <div>
             <AppBar position="static" className='barras'>
                 <Toolbar variant='dense'>
                     <Box>
-                        <Typography className='cursor' variant="h5" color='inherit' >
-                            MYBLOG
-                        </Typography>
+                    <Link to='/home' className='text-decorator-none'>
+                        <Box>
+                            <Typography className='cursor' variant="h5" color='inherit' >
+                                MYBLOG
+                            </Typography>
+                        </Box>
+                    </Link>
                     </Box>
 
                     <Box>
                         <Typography className='cursor espaco'>
-                        |
+                            |
                         </Typography>
                     </Box>
 
@@ -39,7 +56,7 @@ export default function ButtonAppBar() {
                         <Link to='/home' className='text-decorator-none'>
                             <Box mx={1} >
                                 <Typography className='cursor espaco' color='inherit'>
-                                Home
+                                    Home
                                 </Typography>
                             </Box>
                         </Link>
@@ -47,53 +64,65 @@ export default function ButtonAppBar() {
 
                     <Box>
                         <Typography className='cursor'>
-                        |
+                            |
                         </Typography>
                     </Box>
 
                     <Box mx={1} >
-                        <Typography className='cursor espaco' color='inherit'>
-                        Postagem
-                        </Typography>
+
+                        <Link to='/postagens' className='text-decorator-none'>
+                            <Box>
+                                <Typography className='cursor espaco' color='inherit'>
+                                    Postagem
+                                </Typography>
+                            </Box>
+                        </Link>
+
                     </Box>
 
                     <Box>
                         <Typography className='cursor'>
-                        |
+                            |
                         </Typography>
                     </Box>
 
                     <Box mx={1} >
-                        <Typography className='cursor espaco' color='inherit'>
-                        Temas
-                        </Typography>
+                        <Link to='/temas' className='text-decorator-none'>
+                            <Box>
+                                <Typography className='cursor espaco' color='inherit'>
+                                    Temas
+                                </Typography>
+                            </Box>
+                        </Link>
                     </Box>
 
                     <Box>
                         <Typography className='cursor'>
-                        |
+                            |
                         </Typography>
                     </Box>
 
-                    <Box mx={1} >
-                        <Typography className='cursor espaco' color='inherit'>
-                        Sobre nós
-                        </Typography>
+                    <Box>
+                        <Link to="/sobrenos" className='text-decorator-none'>
+                            <Box mx={1} >
+                                <Typography className='cursor espaco' color='inherit'>
+                                    Sobre nós
+                                </Typography>
+                            </Box>
+                        </Link>
                     </Box>
 
                     <Box >
                         <Link to='/' className='text-decorator-none'>
                             <Box mx={1} >
-                                <Button  className="botaoLog" href="/">
+                                <Button className="botaoLog" href="/">
                                     <Typography className='cursor'>
                                         | Logout
                                     </Typography>
                                 </Button>
-
                             </Box>
                         </Link>
                     </Box>
-
                 </Toolbar>
             </AppBar>
         </div>

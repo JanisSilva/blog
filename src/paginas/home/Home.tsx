@@ -15,7 +15,7 @@ function Home() {
     useEffect(() => {
         if (token === "") {
             alert("Você precisa estar logado")
-            history("/login")
+            history("/")
 
         }
     }, [token])
@@ -23,6 +23,7 @@ function Home() {
 
     return (
         <>
+        <Box >
             <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid >
                     <Box className='cropped'>
@@ -41,6 +42,7 @@ function Home() {
                     <TabPostagem />
                 </Grid>
             </Grid>
+            </Box>
         </>
     );
 }

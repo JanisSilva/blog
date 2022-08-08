@@ -16,13 +16,13 @@ function ListaPostagem() {
   useEffect(() => {
     if (token == "") {
       alert("Você precisa estar logado")
-      navigate("/login")
+      navigate("/")
 
     }
   }, [token])
 
   async function getPost() {
-    await busca("/postagens", setPosts, {
+    await busca("/postagens/all", setPosts, {
       headers: {
         'Authorization': token
       }
@@ -35,10 +35,11 @@ function ListaPostagem() {
 
   return (
     <>
+    <Box className='background'>
     {
         posts.map(post => (
       <Box m={3}>
-        <Card variant="outlined" >
+        <Card variant="outlined" className='card'>
           <CardContent>
             <Typography gutterBottom className='boxSuperior'>
             {post.tema?.descricao}
@@ -51,17 +52,16 @@ function ListaPostagem() {
             </Typography>
           </CardContent>
           <CardActions>
-            <Box display="flex" justifyContent="center" mb={1}>
-              <Link to="" className="text-decorator-none" >
-                <Box mx={0}>
+            <Box display="flex">
+              <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none">
+                <Box >
                   <Button variant="contained" className='botaoAtualizar' >
-                    atualizar
+                  atualizar
                   </Button>
                 </Box>
               </Link>
 
-
-              <Link to="" className="text-decorator-none">
+              <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                 <Box mx={0}>
                   <Button variant="contained" className='botaoDelete'>
                     <DeleteIcon/>
@@ -74,6 +74,7 @@ function ListaPostagem() {
       </Box>
          ))
         }
+        </Box>
     </>)
 }
 

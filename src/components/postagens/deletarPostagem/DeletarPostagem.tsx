@@ -16,7 +16,7 @@ function DeletarPostagem() {
     useEffect(() => {
         if (token == "") {
             alert("Você precisa estar logado")
-            history("/login")
+            history("/")
     
         }
     }, [token])
@@ -36,7 +36,7 @@ function DeletarPostagem() {
         }
 
         function sim() {
-            history('/posts')
+            history('/postagens')
             deleteId(`/postagens/${id}`, {
               headers: {
                 'Authorization': token
@@ -46,7 +46,7 @@ function DeletarPostagem() {
           }
         
           function nao() {
-            history('/posts')
+            history('/postagens')
           }
   return (
     <>

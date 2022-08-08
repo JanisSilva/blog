@@ -4,21 +4,9 @@ import IconButton from '@material-ui/core/IconButton';
 import { Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import './NavBar2.css'
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-    title: {
-        flexGrow: 1,
-    },
-}));
 
-export default function ButtonAppBar() {
-    const classes = useStyles();
+import './NavBar2.css'
+
 
     function NavBar() {
         const [token, setToken] = useLocalStorage('token');
@@ -28,9 +16,9 @@ export default function ButtonAppBar() {
         function goLogout() {
             setToken('')
             alert("Usuário deslogado")
-            history('/login')
+            history('/')
         }
-    }
+  
 
     return (
         <div>
@@ -87,7 +75,7 @@ export default function ButtonAppBar() {
                     </Box>
 
                     <Box mx={1} >
-                        <Link to='/temas' className='text-decorator-none'>
+                        <Link to='/tema' className='text-decorator-none'>
                             <Box>
                                 <Typography className='cursor espaco' color='inherit'>
                                     Temas
@@ -114,12 +102,12 @@ export default function ButtonAppBar() {
 
                     <Box >
                         <Link to='/' className='text-decorator-none'>
-                            <Box mx={1} >
-                                <Button className="botaoLog" href="/">
+                            <Box mx={1} onClick={goLogout} className="botaoLog">
+                                
                                     <Typography className='cursor'>
                                         | Logout
                                     </Typography>
-                                </Button>
+                                
                             </Box>
                         </Link>
                     </Box>
@@ -127,4 +115,5 @@ export default function ButtonAppBar() {
             </AppBar>
         </div>
     );
-}
+    }
+    export default NavBar;

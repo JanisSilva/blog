@@ -17,7 +17,11 @@ function TabPostagem() {
       <TabContext value={value}>
         <AppBar position="static" className='barras2' >
           <Tabs centered indicatorColor="secondary" onChange={handleChange}>
-            <Tab className='botoesPost' label="Todas as postagens" value="1" />
+            <Box>
+              <Link to ='/postagens' className='text-decorator-none' >
+            <Tab className='botoesPost' label="Postagens novas" value="1" />
+            </Link>
+            </Box>
 
             <Box>
               <Link to="/formularioTema" className='text-decorator-none'>

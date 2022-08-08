@@ -6,6 +6,7 @@ import Tema from '../../../models/Tema';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
+import { Box } from '@mui/system';
 
 function CadastroPost() {
     let history = useNavigate();
@@ -16,7 +17,7 @@ function CadastroPost() {
     useEffect(() => {
         if (token === "") {
             alert("Você precisa estar logado")
-            history("/login")
+            history("/")
 
         }
     }, [token])
@@ -48,7 +49,7 @@ function CadastroPost() {
     }, [id])
 
     async function getTemas() {
-        await busca("/tema", setTemas, {
+        await busca("/tema/all", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -77,14 +78,14 @@ function CadastroPost() {
         e.preventDefault()
 
         if (id !== undefined) {
-            put(`/postagens`, postagem, setPostagem, {
+            put(`/postagens/atualizar`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
             alert('Postagem atualizada com sucesso');
         } else {
-            post(`/postagens`, postagem, setPostagem, {
+            post(`/postagens/novo`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
@@ -96,18 +97,21 @@ function CadastroPost() {
     }
 
     function back() {
-        history('/posts')
+        history('/postagens')
     }
 
     return (
-        <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+        <>
 
+        <Container maxWidth="sm" className="topo" >
+            <form onSubmit={onSubmit}>
+            
+                <Typography className='topo-font' >Novo Post</Typography>
+                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="Título" label="Título" variant="outlined" name="Título" margin="normal" fullWidth />
+                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="Texto" label="Texto" name="Texto" variant="outlined" margin="normal" fullWidth />
+                
                 <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                    <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
@@ -122,13 +126,19 @@ function CadastroPost() {
                             ))
                         }
                     </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
-                        Finalizar
+                    <Box m={1} mx={10} >
+                    <FormHelperText >Escolha um tema!</FormHelperText>
+                    </Box>
+                    <Box>
+                    <Button type="submit" variant="contained" className='botaoPostar'>
+                        Postar
                     </Button>
+                    </Box>
                 </FormControl>
             </form>
         </Container>
+
+        </>
     )
 }
 export default CadastroPost;

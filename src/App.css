@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -21,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
 .App-link {
@@ -35,4 +36,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App-body{
+  background-color: #F2EEE3 !important ;
+  background: radial-gradient(#3B9ABF 1px, transparent 1px) !important;
 }

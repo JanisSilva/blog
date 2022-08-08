@@ -18,7 +18,7 @@ function DeletarTema() {
     useEffect(() => {
         if (token === "") {
             alert("Você precisa estar logado")
-            history("/login")
+            history("/")
     
         }
     }, [token])
@@ -30,7 +30,7 @@ function DeletarTema() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/temas/${id}`, setTemas, {
+        buscaId(`/tema/${id}`, setTemas, {
             headers: {
               'Authorization': token
             }
@@ -38,8 +38,8 @@ function DeletarTema() {
         }
 
         function sim() {
-            history('/temas')
-            deleteId(`/temas/${id}`, {
+            history('/tema')
+            deleteId(`/tema/${id}`, {
               headers: {
                 'Authorization': token
               }
@@ -48,7 +48,7 @@ function DeletarTema() {
           }
         
           function nao() {
-            history('/temas')
+            history('/tema')
           }
           
           return (

@@ -1,3 +1,17 @@
 .topo{
     margin-top: 20px;
+   margin-bottom: 30px;
+}
+
+.topo-font{
+    font-size: 50px !important;
+    color: #11503F !important;
+    text-align: center;
+}
+
+.botaoPostar{
+    border-radius: 10px 10px 10px 10px !important;
+    color: #F2EEE3!important;
+    background-color:#3CA6A6!important;
+    
 }

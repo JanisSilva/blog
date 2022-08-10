@@ -5,12 +5,15 @@ import { Box } from '@mui/material';
 import DeleteIcon from '@material-ui/icons/Delete'
 import './ListaTema.css';
 import Tema from '../../../models/Tema';
-import useLocalStorage from 'react-use-localstorage';
 import { busca } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+);
   let history = useNavigate();
 
   useEffect(() => {
@@ -50,14 +53,14 @@ function ListaTema() {
 
                     <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
                     <Box mx={0}>
-                  <Button variant="contained" className='botaoAtualizar-tema' >
+                  <Button variant="contained" className='botaoAtualizar-tema' disableElevation>
                     atualizar
                   </Button>
                   </Box>
                     </Link>
                     <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                       <Box mx={0}>
-                        <Button variant="contained" className='botaoDelete-tema'>
+                        <Button variant="contained" className='botaoDelete-tema'disableElevation>
                           <DeleteIcon />
                         </Button>
                       </Box>

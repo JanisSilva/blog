@@ -3,8 +3,14 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Grid, TextField, Button } from '@material-ui/core';
 import { Box, Typography } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokensReducer';
 
 function SobreNos(){
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+);
+
  return (
 
     <Grid>

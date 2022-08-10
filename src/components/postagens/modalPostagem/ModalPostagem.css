@@ -3,7 +3,10 @@
 }
 
 .btnModal{
-    border-radius: 10px 10px 10px 10px !important;
-    color: #F2EEE3!important;
+    border-radius: 10px 20px 10px 20px !important;
+    color: #11503F!important;
+    background-color: #B9BF8E !important;
+    text-transform: capitalize !important;
+    font-weight: 600 !important;
+    
 }
-

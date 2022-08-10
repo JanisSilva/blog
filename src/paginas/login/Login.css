@@ -1,17 +1,39 @@
-.textos1 {
-    font-weight: bold !important;
-}
-
-.imagem {
-    background-image: url("https://www.lojadonnarita.com.br/wp-content/uploads/2018/10/caderno-quadrado4.jpg");
-    background-repeat: no-repeat;
-    width: 100vh;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-}
-
-
 .text-decorator-none {
     text-decoration: none;
 }
+
+.background-login{
+    width: 100vh;
+    background-color: #F2EEE3 !important ;
+    background: radial-gradient(#3B9ABF 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+
+.box-login{
+    margin-top: 150px;
+    margin-bottom: 150px;
+    background-color:#faf8f2!important;
+    min-width: 900px !important;
+    min-height: 450px !important;
+    border-radius: 40px 40px 40px 40px !important;
+}
+
+.titulo-login {
+    margin-top: 50px !important;
+    font-weight: bold !important;
+    color: #11503F!important;
+}
+
+.botaoAtualizar-login{
+    border-radius: 10px 10px 10px 10px !important;
+    color: #F2EEE3!important;
+    background-color:#3CA6A6!important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    text-transform: capitalize !important;
+    font-size: 14px !important;
+    margin-right: 6px !important;
+    margin-left: 4px !important;
+    font-weight: bolder !important;
+}
+

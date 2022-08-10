@@ -13,9 +13,12 @@ import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import SobreNos from './paginas/sobreNos/SobreNos';
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 import "./App.css";
+import {Provider} from 'react-redux';
+import store from './store/store';
 
 function App() {
     return (
+        <Provider store={store}>
         <Router>
             <NavBar />
             <div style={{ minHeight: '100vh' }}>
@@ -36,6 +39,7 @@ function App() {
             </div>
             <Footer />
         </Router>
+        </Provider>
     );
 }
 export default App;

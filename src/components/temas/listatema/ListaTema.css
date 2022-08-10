@@ -11,36 +11,50 @@
 
 .boxSuperior-tema{
     background-color: #B9BF8E;
-    border-radius: 20px 20px 0px 0px;
-    color: #ffffff!important;
+    border-radius: 20px 20px 5px 5px;
+    color: #11503F!important;
     font-weight: 600 !important;
     font-size: 16px !important;
     text-align: center;
+    padding: 6px !important;
+    margin: 0px !important;
 }
 
 .botaoAtualizar-tema{
-    border-radius: 0px 0px 0px 20px !important;
+    border-radius: 10px 10px 10px 20px !important;
     color: #F2EEE3!important;
     background-color:#3CA6A6!important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    text-transform: capitalize !important;
+    font-size: 14px !important;
+    margin-right: 6px !important;
+    margin-left: 4px !important;
 }
 
 
 .botaoDelete-tema{
-    border-radius: 0px 0px 20px 0px !important;
+    border-radius: 10px 10px 20px 10px !important;
     color: #F2EEE3!important;
     background-color: #FF8177 !important;
+    padding-left: 30px !important;
+    padding-right: 25px !important;
+    margin-left: 6px !important;
 }
 
 .card-tema{
-    border-radius: 30px 30px 30px 30px !important;
-    max-width: 250px;
-    min-width: 250px;
-    background-color:#fcfcfc!important;
-    margin-top: 20px !important;
+    border-radius: 40px 40px 40px 40px !important;
+    max-width: 180px;
+    min-width: 230px;
+    background-color:#faf8f2!important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    margin-top: 25px !important;
 }
 
 .texto-tema{
     text-align: center;
-    font-size: large !important;
-    margin-top: 30px !important;
+    font-size: x-large !important;
+    margin-top: 15px !important;
+    color: #11503F!important;
 }

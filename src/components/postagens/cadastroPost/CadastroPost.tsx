@@ -1,18 +1,22 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
+import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText, Grid } from "@material-ui/core"
 import './CadastroPost.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Tema from '../../../models/Tema';
-import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { Box } from '@mui/system';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
 
 function CadastroPost() {
     let history = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
 
     useEffect(() => {
         if (token === "") {
@@ -102,43 +106,42 @@ function CadastroPost() {
 
     return (
         <>
-
+        <Grid container direction='row' justifyContent='center' alignItems='center' className='background-cadastroPost' >
+            <Grid alignItems='center' xs={6} className='box-cadastroPost'>
         <Container maxWidth="sm" className="topo" >
-            <form onSubmit={onSubmit}>
-            
-                <Typography className='topo-font' >Novo Post</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="Título" label="Título" variant="outlined" name="Título" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="Texto" label="Texto" name="Texto" variant="outlined" margin="normal" fullWidth />
-                
-                <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-helper-label"
-                        id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/tema/${e.target.value}`, setTema, {
-                            headers: {
-                                'Authorization': token
-                            }
-                        })}>
-                        {
-                            temas.map(tema => (
-                                <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
-                            ))
+        <form onSubmit={onSubmit}>
+        
+            <Typography className='titulo-fontPost'>Novo Post</Typography>
+            <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" variant="outlined" name="titulo" margin="dense" fullWidth />
+            <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto" multiline rows={4} defaultValue="Default Value" variant="outlined" name="texto" margin='normal' fullWidth />
+            <FormControl >
+                <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
+                <Select labelId="demo-simple-select-helper-label" id="demo-simple-select-helper"
+                    onChange={(e) => buscaId(`/tema/${e.target.value}`, setTema, {
+                        headers: {
+                            'Authorization': token
                         }
-                    </Select>
-                    <Box m={1} mx={10} >
-                    <FormHelperText >Escolha um tema!</FormHelperText>
-                    </Box>
-                    <Box>
-                    <Button type="submit" variant="contained" className='botaoPostar'>
-                        Postar
-                    </Button>
-                    </Box>
-                </FormControl>
-            </form>
-        </Container>
-
+                    })}>
+                    {
+                        temas.map(tema => (
+                            <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+                        ))
+                    }
+                </Select>
+                <Box m={1} mx={10} >
+                <FormHelperText >Escolha um tema!</FormHelperText>
+                </Box>
+                <Box>
+                <Button type="submit" variant="contained" className='botaoPostar'>
+                    Postar
+                </Button>
+                </Box>
+            </FormControl>
+        </form>
+    </Container>
+    </Grid>
+    </Grid>
         </>
-    )
+    );
 }
 export default CadastroPost;

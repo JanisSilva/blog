@@ -8,11 +8,10 @@
 
 .cropped {
     width: 1540px; /* width of container */
-    height: auto; /* height of container */
+    height: 400px; /* height of container */
     overflow: hidden;
 }
 
 .cropped img {
     margin: -190px 0px 0px -10px;
 }
-

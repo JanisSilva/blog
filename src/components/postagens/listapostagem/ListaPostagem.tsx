@@ -7,11 +7,15 @@ import { Card, CardActions, CardContent, Button, Typography } from '@material-ui
 import DeleteIcon from '@material-ui/icons/Delete'
 import './ListaPostagem2.css';
 import useLocalStorage from 'react-use-localstorage';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
-  const [token, setToken] = useLocalStorage('token');
   let navigate = useNavigate();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+      (state) => state.tokens
+    );
 
   useEffect(() => {
     if (token == "") {
@@ -44,10 +48,10 @@ function ListaPostagem() {
             <Typography gutterBottom className='boxSuperior'>
             {post.tema?.descricao}
             </Typography>
-            <Typography variant="h6" component="h2">
+            <Typography variant="h6" component="h2" className='boxTexto'>
             {post.titulo}
             </Typography>
-            <Typography variant="body2" component="p">
+            <Typography variant="body2" component="p"className='boxTexto'>
             {post.texto}
             </Typography>
           </CardContent>
@@ -55,15 +59,15 @@ function ListaPostagem() {
             <Box display="flex">
               <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none">
                 <Box >
-                  <Button variant="contained" className='botaoAtualizar' >
+                  <Button variant="contained" className='botaoAtualizar' disableElevation>
                   atualizar
                   </Button>
                 </Box>
               </Link>
 
               <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
-                <Box mx={0}>
-                  <Button variant="contained" className='botaoDelete'>
+                <Box >
+                  <Button variant="contained" className='botaoDelete' disableElevation>
                     <DeleteIcon/>
                   </Button>
                 </Box>

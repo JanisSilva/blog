@@ -3,117 +3,134 @@ import { Typography, Button, Toolbar, AppBar, makeStyles } from '@material-ui/co
 import IconButton from '@material-ui/core/IconButton';
 import { Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 import './NavBar2.css'
+import { addToken } from '../../../store/tokens/actions';
+import ModalPostagem from '../../postagens/modalPostagem/ModalPostagem';
 
 
-    function NavBar() {
-        const [token, setToken] = useLocalStorage('token');
-        let history = useNavigate();
 
+function NavBar() {
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+    let history = useNavigate();
+    const dispatch = useDispatch();
 
-        function goLogout() {
-            setToken('')
-            alert("Usuário deslogado")
-            history('/')
-        }
-  
+    function goLogout() {
+        dispatch(addToken(''));
+        setToken('')
+        alert("Usuário deslogado")
+        history('/')
+    }
+    var navbarComponent;
 
-    return (
-        <div>
-            <AppBar position="static" className='barras'>
-                <Toolbar variant='dense'>
-                    <Box>
+    if (token != "") {
+        navbarComponent = <AppBar position="static" className='barras'>
+            <Toolbar variant='dense'>
+                <Box>
                     <Link to='/home' className='text-decorator-none'>
                         <Box>
-                            <Typography className='cursor' variant="h5" color='inherit' >
+                            <Typography className='cursor espaco-logo' variant="h5" color='inherit' >
                                 MYBLOG
                             </Typography>
                         </Box>
                     </Link>
-                    </Box>
+                </Box>
 
-                    <Box>
-                        <Typography className='cursor espaco'>
-                            |
-                        </Typography>
-                    </Box>
+                <Box>
+                    <Typography className='cursor espaco'>
+                        |
+                    </Typography>
+                </Box>
 
-                    <Box >
-                        <Link to='/home' className='text-decorator-none'>
-                            <Box mx={1} >
-                                <Typography className='cursor espaco' color='inherit'>
-                                    Home
-                                </Typography>
-                            </Box>
-                        </Link>
-                    </Box>
+                <Box >
+                    <Link to='/home' className='text-decorator-none'>
+                        <Box mx={1} >
+                            <Typography className='cursor espaco' color='inherit'>
+                                Home
+                            </Typography>
+                        </Box>
+                    </Link>
+                </Box>
 
-                    <Box>
-                        <Typography className='cursor'>
-                            |
-                        </Typography>
-                    </Box>
+                <Box>
+                    <Typography className='cursor'>
+                        |
+                    </Typography>
+                </Box>
 
-                    <Box mx={1} >
+                <Box mx={1} >
 
-                        <Link to='/postagens' className='text-decorator-none'>
-                            <Box>
-                                <Typography className='cursor espaco' color='inherit'>
-                                    Postagem
-                                </Typography>
-                            </Box>
-                        </Link>
+                    <Link to='/postagens' className='text-decorator-none'>
+                        <Box>
+                            <Typography className='cursor espaco' color='inherit'>
+                                Postagem
+                            </Typography>
+                        </Box>
+                    </Link>
 
-                    </Box>
+                </Box>
 
-                    <Box>
-                        <Typography className='cursor'>
-                            |
-                        </Typography>
-                    </Box>
+                <Box>
+                    <Typography className='cursor'>
+                        |
+                    </Typography>
+                </Box>
 
-                    <Box mx={1} >
-                        <Link to='/tema' className='text-decorator-none'>
-                            <Box>
-                                <Typography className='cursor espaco' color='inherit'>
-                                    Temas
-                                </Typography>
-                            </Box>
-                        </Link>
-                    </Box>
+                <Box mx={1} >
+                    <Link to='/tema' className='text-decorator-none'>
+                        <Box>
+                            <Typography className='cursor espaco' color='inherit'>
+                                Temas
+                            </Typography>
+                        </Box>
+                    </Link>
+                </Box>
 
-                    <Box>
-                        <Typography className='cursor'>
-                            |
-                        </Typography>
-                    </Box>
+                <Box>
+                    <Typography className='cursor'>
+                        |
+                    </Typography>
+                </Box>
 
-                    <Box>
-                        <Link to="/sobrenos" className='text-decorator-none'>
-                            <Box mx={1} >
-                                <Typography className='cursor espaco' color='inherit'>
-                                    Sobre nós
-                                </Typography>
-                            </Box>
-                        </Link>
-                    </Box>
+                <Box>
+                    <Link to="/sobrenos" className='text-decorator-none'>
+                        <Box mx={1} >
+                            <Typography className='cursor espaco' color='inherit'>
+                                Sobre nós
+                            </Typography>
+                        </Box>
+                    </Link>
+                </Box>
+                <Box className='espaco-novoPost'>
+                        <ModalPostagem />
+                </Box>
 
-                    <Box >
-                        <Link to='/' className='text-decorator-none'>
-                            <Box mx={1} onClick={goLogout} className="botaoLog">
-                                
-                                    <Typography className='cursor'>
-                                        | Logout
-                                    </Typography>
-                                
-                            </Box>
-                        </Link>
-                    </Box>
-                </Toolbar>
-            </AppBar>
-        </div>
-    );
+                <Box >
+                    <Link to='/' className='text-decorator-none'>
+                        <Box mx={1} onClick={goLogout} className="botaoLog">
+
+                            <Typography className='cursor'>
+                                | Logout
+                            </Typography>
+
+                        </Box>
+                    </Link>
+                </Box>
+            </Toolbar>
+        </AppBar>
     }
-    export default NavBar;
+
+    return (
+        <>
+            {navbarComponent}
+        </>
+    );
+}
+export default NavBar;
+
+function setToken(arg0: string) {
+    throw new Error('Function not implemented.');
+}

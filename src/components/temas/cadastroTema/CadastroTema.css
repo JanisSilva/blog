@@ -1,3 +1,35 @@
 .topo{
     margin-top: 20px;
 }
+
+.background-cadastroTema{
+    width: 100vh;
+    background-color: #F2EEE3 !important ;
+    background: radial-gradient(#3B9ABF 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+
+.botaoFinalizar{
+    border-radius: 10px 10px 10px 10px !important;
+    color: #F2EEE3!important;
+    background-color:#3CA6A6!important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    text-transform: capitalize !important;
+    font-size: 14px !important;
+    font-weight: bolder !important;
+    margin-top: 10px !important;
+}
+.box-cadastroTema{
+    margin-top: 50px;
+    margin-bottom: 500px;
+    background-color:#faf8f2!important;
+    min-width: 700px !important;
+    min-height: 250px !important;
+    border-radius: 40px 40px 40px 40px !important;
+}
+.titulo-fontTema{
+    font-size: 30px !important;
+    color: #11503F !important;
+    text-align: center;
+}

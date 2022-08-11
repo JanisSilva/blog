@@ -2,29 +2,41 @@
     text-decoration: none;
 }
 
-.background-login{
+.imagemLogin {
+    background-image: url("https://i.pinimg.com/originals/15/0c/66/150c66d513ff8de326f13ba89b33c260.jpg");
+    background-repeat: no-repeat;
     width: 100vh;
+    min-height: 100vh;
+    background-size: 100% !important;
+    background-position: bottom!important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    margin-left: 130px !important;
+    overflow: hidden;
+}
+.backgroundLogin{
     background-color: #F2EEE3 !important ;
     background: radial-gradient(#3B9ABF 1px, transparent 1px);
     background-size: 25px 25px;
+    min-height: 100vh;
+    width: 100vw;
+    flex-wrap: nowrap !important;
+   
 }
-
-.box-login{
-    margin-top: 150px;
-    margin-bottom: 150px;
-    background-color:#faf8f2!important;
-    min-width: 900px !important;
-    min-height: 450px !important;
-    border-radius: 40px 40px 40px 40px !important;
-}
-
-.titulo-login {
-    margin-top: 50px !important;
+.tituloLogin {
+    margin-top: 30px !important;
     font-weight: bold !important;
     color: #11503F!important;
 }
 
-.botaoAtualizar-login{
+.boxLogin{
+    border-radius: 40px 40px 40px 40px !important;
+    background-color:#faf8f2!important;
+    padding-bottom: 10px !important;
+    margin-left: 125px !important;
+}
+
+.botaoLogin{
     border-radius: 10px 10px 10px 10px !important;
     color: #F2EEE3!important;
     background-color:#3CA6A6!important;
@@ -36,4 +48,3 @@
     margin-left: 4px !important;
     font-weight: bolder !important;
 }
-

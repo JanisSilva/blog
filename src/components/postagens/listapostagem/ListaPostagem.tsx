@@ -5,10 +5,10 @@ import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete'
-import './ListaPostagem2.css';
-import useLocalStorage from 'react-use-localstorage';
+import './ListaPostagem.css';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
+import {toast} from 'react-toastify';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -19,7 +19,16 @@ function ListaPostagem() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado")
+      toast.error('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        theme: 'light',
+        progress: undefined,
+        });
       navigate("/")
 
     }

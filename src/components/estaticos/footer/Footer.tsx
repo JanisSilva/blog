@@ -4,7 +4,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Grid } from '@material-ui/core';
 import {Box} from '@mui/material'
-import './Footer2.css'
+import './Footer.css'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
@@ -36,8 +36,8 @@ function Footer() {
             </Box>
             <Box className='box2'>
                 <Box>
-                    <a target="_blank" href="https://brasil.generation.org" className='text-decorator-none'>
-                        <Typography variant="subtitle2" gutterBottom className='textos' align="center">Site: brasil.generation.org</Typography>
+                    <a target="_blank" href="https://www.behance.net/janissilva" className='text-decorator-none'>
+                        <Typography variant="subtitle2" gutterBottom className='textos' align="center">behance.net/janissilva</Typography>
                     </a>
                 </Box>
             </Box>

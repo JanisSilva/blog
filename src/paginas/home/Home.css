@@ -1,15 +1,15 @@
-.caixa{
-    background-color: #3F51B5;
+
+.postagensFundo{
+    background-color: #F2EEE3 !important ;
+    background: radial-gradient(#3B9ABF 1px, transparent 1px);
+    background-size: 25px 25px;
 }
 
-
-.botao{
-    border-color: white!important; 
-    background-color: #3F51B5;
-    color: white !important;
-}
-
-.postagens{
-    background-color: white;
-    
+.cropped {
+    width: 1518px; /* width of container */
+    height: 400px; /* height of container */
+    overflow: hidden;
+    background-image: url("https://studioghiblimovies.com/wp-content/uploads/2020/03/73-737065_living-waters-ag-wave-vector-clipart.png");
+    background-position: bottom ;
+    background-size: cover;
 }

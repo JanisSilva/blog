@@ -7,6 +7,7 @@ import { buscaId, deleteId } from '../../../services/Service';
 import {Box} from '@mui/material'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import {toast} from 'react-toastify';
 
 function DeletarPostagem() {
     let history = useNavigate();
@@ -18,7 +19,16 @@ function DeletarPostagem() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+          toast.error('Você precisa estar logado', {
+            position: "top-right",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            theme: 'light',
+            progress: undefined,
+            });
             history("/")
     
         }
@@ -45,7 +55,16 @@ function DeletarPostagem() {
                 'Authorization': token
               }
             });
-            alert('Postagem deletada com sucesso');
+            toast.success('Postagem deletada com sucesso!', {
+              position: "top-right",
+              autoClose: 4000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: false,
+              theme: 'light',
+              progress: undefined,
+              });
           }
         
           function nao() {
@@ -53,34 +72,36 @@ function DeletarPostagem() {
           }
   return (
     <>
-      <Box m={2}>
-        <Card variant="outlined" >
+    <Box className='background'>
+      <Box m={3} >
+        <Card variant="outlined" className='cardDelete' >
           <CardContent>
             <Box justifyContent="center">
-              <Typography color="textSecondary" gutterBottom>
-                Deseja deletar a Postagem:
+              <Typography color="textSecondary" gutterBottom className='boxSuperiorDelete'>
+                Deletar a postagem?
               </Typography>
-              <Typography color="textSecondary" >
+              <Typography className='textoDelete' >
               {post?.titulo}
               </Typography>
             </Box>
 
           </CardContent>
-          <CardActions>
-            <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
+          <CardActions >
+            <Box display="flex" justifyContent="start" ml={0} mb={0} >
               <Box mx={2}>
-              <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
+              <Button onClick={sim} variant="contained" className="botaoSim" disableElevation>
                 Sim
               </Button>
               </Box>
               <Box>
-              <Button  onClick={nao} variant="contained" size='large' color="secondary">
+              <Button  onClick={nao} variant="contained" className='botaoNao'disableElevation>
                 Não
               </Button>
               </Box>
             </Box>
           </CardActions>
         </Card>
+      </Box>
       </Box>
     </>
   );

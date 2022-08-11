@@ -1,20 +1,61 @@
-.imagem2 {
-    background-image: url("https://www.lojadonnarita.com.br/wp-content/uploads/2018/10/caderno-quadrado4.jpg");
+.text-decorator-none-cadastro{
+    text-decoration-line: none;
+}
+
+.imagemCadastro {
+    background-image: url("https://www.boredpanda.com/blog/wp-content/uploads/2016/06/m-smart2-57623a5f07c72__880.jpg");
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;
-    background-size: cover;
-    background-position: center;
+    background-size: 100% !important;
+    background-position: bottom!important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    margin-right: 126px !important;
+    overflow: hidden;
 }
 
-.textos2 {
+.backgroundCadastro{
+    width: 100vh;
+    background-color: #F2EEE3 !important ;
+    background: radial-gradient(#3B9ABF 1px, transparent 1px);
+    background-size: 25px 25px;
+    flex-wrap: nowrap !important;
+}
+.tituloCadastro {
+    margin-top: 30px !important;
     font-weight: bold !important;
+    color: #11503F!important;
+}
+.boxCadastro{
+    border-radius: 40px 40px 40px 40px !important;
+    background-color:#faf8f2!important;
+    padding-bottom: 40px !important;
+    margin-right: 130px !important;
 }
 
-.btnCancelar{
-    margin-left: 20px !important;
+.botaoCadastro{
+    border-radius: 10px 10px 10px 10px !important;
+    color: #F2EEE3!important;
+    background-color:#3CA6A6!important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    text-transform: capitalize !important;
+    font-size: 14px !important;
+    margin-right: 15px !important;
+    font-weight: bolder !important;
+    margin-top: 10px !important;
 }
 
-.text-decorator-none2{
-    text-decoration-line: none;
+.botaoCancelar{
+    border-radius: 10px 10px 10px 10px !important;
+    color: #F2EEE3!important;
+    background-color:#FF8177!important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    text-transform: capitalize !important;
+    font-size: 14px !important;
+    margin-left: 15px !important;
+    font-weight: bolder !important;
+    margin-top: 10px !important;
 }

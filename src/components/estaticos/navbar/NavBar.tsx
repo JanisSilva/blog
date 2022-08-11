@@ -5,10 +5,10 @@ import { Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-import './NavBar2.css'
+import './NavBar.css'
 import { addToken } from '../../../store/tokens/actions';
-import ModalPostagem from '../../postagens/modalPostagem/ModalPostagem';
 
+import {toast} from 'react-toastify';
 
 
 function NavBar() {
@@ -20,8 +20,16 @@ function NavBar() {
 
     function goLogout() {
         dispatch(addToken(''));
-        setToken('')
-        alert("Usuário deslogado")
+        toast.error('Você saiu da sua conta', {
+            position: "top-right",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            theme: 'light',
+            progress: undefined,
+            });
         history('/')
     }
     var navbarComponent;
@@ -103,9 +111,6 @@ function NavBar() {
                             </Typography>
                         </Box>
                     </Link>
-                </Box>
-                <Box className='espaco-novoPost'>
-                        <ModalPostagem />
                 </Box>
 
                 <Box >

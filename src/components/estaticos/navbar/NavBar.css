@@ -1,15 +1,31 @@
 .cursor{
-    cursor: pointer;
-    color: white !important;
+  cursor: pointer;
+  font-weight: 600 !important;
+  color: #11503F !important;
 }
 
 .text-decorator-none{
-  text-decoration-line: none !important;
+text-decoration-line: none !important;
 }
 
-.botoes{
-  position: relative;
-  top: 8px;
-  right: 16px;
-  font-size: 18px;
+.espaco{
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+}
+
+.botaoLog{
+position: relative;
+margin-left: 750px !important;
+text-transform: capitalize !important;
+font-weight: 600 !important;
+color: #11503F !important;
+background-color: #F2CFBB !important;
+}
+
+.barras{
+ background-color: #F2CFBB !important;
+}
+
+.espaco-logo{
+margin-right: 8px !important;
 }

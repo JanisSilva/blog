@@ -59,7 +59,7 @@ function ModalPostagem () {
       <Button
         variant="contained"
         className="btnModal"
-        onClick={handleOpen} disableElevation >Novo Post</Button>
+        onClick={handleOpen} disableElevation >Novo post</Button>
       <Modal
         open={open}
         onClose={handleClose}

@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { Grid } from '@material-ui/core';
 import { Box } from '@mui/material'
-import './Home2.css';
+import './Home.css';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
+
+
 
 function Home() {
 
@@ -17,7 +19,6 @@ function Home() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
             history("/")
 
         }
@@ -30,7 +31,6 @@ function Home() {
             <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid >
                     <Box className='cropped'>
-                        <img src="https://wallpaperaccess.com/full/2810144.png" alt="" width="1540" height="auto" />
                     </Box>
                 </Grid>
                 

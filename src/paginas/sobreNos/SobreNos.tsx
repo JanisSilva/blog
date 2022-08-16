@@ -34,7 +34,7 @@ function SobreNos() {
             <CardContent>
               <Typography className='textoSobreNos'>Olá, me chamo Janis, sou formada em técnico em Comunicação Visual e cursando Design gráfico.
                 Atualmente estou finalizando o bootcamp de Full Stack Java pela Generation Brasil, com grande interesse em estender meus conhecimentos
-                para o front-end e para estreiar meu primeiro blog, escolhi a temática inspirada nos filmes e cores do Studio Ghibli.
+                para o front-end. Para estreiar meu primeiro blog, escolhi a temática inspirada nos filmes e cores do Studio Ghibli.
                 Este blog foi feito para posts de pequenas notas. Aproveite!
 
               </Typography>

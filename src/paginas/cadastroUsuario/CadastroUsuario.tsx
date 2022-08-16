@@ -49,7 +49,7 @@ function CadastroUsuario() {
         e.preventDefault();
         if (confirmarSenha == user.senha) {
             cadastroUsuario(`/usuario/cadastrar`, user, setUserResult)
-            toast.success('Usuario cadastrado com sucesso!', {
+            toast.success('Conta cadastrada com sucesso!', {
                 position: "top-right",
                 autoClose: 4000,
                 hideProgressBar: false,

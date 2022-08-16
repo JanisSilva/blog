@@ -1,0 +1,73 @@
+.backgroundSobreNos{
+    background-color: #F2EEE3 !important ;
+    background: radial-gradient(#3B9ABF 1px, transparent 1px);
+    background-size: 25px 25px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap !important;
+}
+
+.avatar{
+    width: 164px !important;
+    height: 164px;
+    border-radius: 50% !important;
+}
+
+.avatarReverso{
+    width: 160px !important;
+    height: 160px;
+    border-radius: 50% !important;
+}
+
+.cardSobreNosTitulo{
+    background-color: #B9BF8E;
+    border-radius: 20px 20px 20px 20px;
+    width: 200px;
+    height: 34px;
+    margin-left: 650px;
+    margin-top: -165px;
+    justify-content: center !important;
+}
+
+.tituloCardSobreNos{
+    color: #11503F!important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.cardSobreNos{
+    border-radius: 40px 40px 40px 40px !important;
+    width: 640px !important;
+    height: 150px !important;
+    background-color:#faf8f2!important;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.textoSobreNos{
+    font-size: 14px;
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #11503F!important;
+}
+
+.boxConteudo{
+    flex-direction: row !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.boxConteudoReverso{
+    flex-direction: row-reverse !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}

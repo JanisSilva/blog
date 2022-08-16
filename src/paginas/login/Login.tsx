@@ -42,7 +42,7 @@ function Login() {
 
         try {
             await login(`/usuario/logar`, userLogin, setToken)
-            toast.success('Usuario logado com sucesso!', {
+            toast.success('Conta logada com sucesso!', {
                 position: "top-right",
                 autoClose: 4000,
                 hideProgressBar: false,

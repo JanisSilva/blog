@@ -5,10 +5,9 @@ import { Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-import './NavBar.css'
 import { addToken } from '../../../store/tokens/actions';
-
 import {toast} from 'react-toastify';
+import './NavBar.css'
 
 
 function NavBar() {

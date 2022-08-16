@@ -36,7 +36,7 @@
     font-weight: 600 !important;
     font-size: 18px !important;
     text-align: center;
-    margin-top: 3px;
+    margin-top: 4px !important;
 }
 
 .cardSobreNos{
@@ -49,7 +49,7 @@
 }
 
 .textoSobreNos{
-    font-size: 14px;
+    font-size: 14px !important;
     padding-top: 5px;
     padding-left: 15px;
     padding-right: 15px;

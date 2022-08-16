@@ -3,9 +3,9 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Grid } from '@material-ui/core';
 import {Box} from '@mui/material'
-import './Footer.css'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import './Footer.css'
 
 
 function Footer() {

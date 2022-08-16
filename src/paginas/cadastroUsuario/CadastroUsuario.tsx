@@ -4,8 +4,8 @@ import { Box, Typography } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { cadastroUsuario } from '../../services/Service';
 import User from '../../models/User';
-import './CadastroUsuario.css';
 import {toast} from 'react-toastify';
+import './CadastroUsuario.css';
 
 function CadastroUsuario() {
     let history = useNavigate();

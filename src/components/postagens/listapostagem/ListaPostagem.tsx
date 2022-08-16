@@ -5,10 +5,10 @@ import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete'
-import './ListaPostagem.css';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
 import {toast} from 'react-toastify';
+import './ListaPostagem.css';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])

@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { Grid } from '@material-ui/core';
 import { Box } from '@mui/material'
-import './Home.css';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
-
+import './Home.css';
 
 
 function Home() {

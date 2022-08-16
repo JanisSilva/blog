@@ -3,9 +3,9 @@ import { AppBar, Tab, Tabs, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
 import { TabContext, TabPanel } from '@material-ui/lab';
 import ListaPostagem from '../listapostagem/ListaPostagem';
-import './TabPostagem.css';
 import { Link } from 'react-router-dom';
 import ModalPostagem from '../../postagens/modalPostagem/ModalPostagem';
+import './TabPostagem.css';
 
 
 function TabPostagem() {
